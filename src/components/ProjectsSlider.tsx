@@ -2,7 +2,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, FreeMode } from "swiper/modules";
-import Image from "next/image";
 
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -21,13 +20,12 @@ export default function ProjectsSlider() {
     <section className="relative py-12 sm:py-16 md:py-20 lg:py-28 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
 
-        <div className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 text-left px-2 sm:px-0">
-          <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-semibold text-[#021618]">
+        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-16 text-left px-2 sm:px-0">
+          <h2 className="text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-[#021618] leading-tight">
             Ausgewählte Projekte
           </h2>
-          <p className="mt-2 max-w-xl text-xs sm:text-sm md:text-base text-[#021618]/60">
-            Websites, die Marken definieren, Vertrauen aufbauen und messbare
-            Ergebnisse liefern.
+          <p className="mt-1 sm:mt-2 max-w-xl text-[10px] xs:text-xs sm:text-sm md:text-base text-[#021618]/60 leading-relaxed">
+            Websites, die Marken definieren, Vertrauen aufbauen und messbare Ergebnisse liefern.
           </p>
         </div>
 
@@ -36,49 +34,59 @@ export default function ProjectsSlider() {
           slidesPerView="auto"
           spaceBetween={20}
           breakpoints={{
+            320: {
+              spaceBetween: 20,
+            },
+            480: {
+              spaceBetween: 25,
+            },
             640: {
-              spaceBetween: 40,
+              spaceBetween: 30,
             },
             768: {
-              spaceBetween: 60,
+              spaceBetween: 40,
             },
             1024: {
-              spaceBetween: 80,
+              spaceBetween: 50,
+            },
+            1280: {
+              spaceBetween: 70,
+            },
+            1536: {
+              spaceBetween: 90,
             },
           }}
-          loop
+          loop={true}
           freeMode={{
-            enabled: true,
-            momentum: false,
+            enabled: false,
           }}
           speed={8000}
           autoplay={{
             delay: 0,
             disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+            reverseDirection: false,
           }}
-          grabCursor
+          grabCursor={true}
+          allowTouchMove={true}
+          touchEventsTarget="container"
+          watchSlidesProgress={true}
           className="projects-swiper"
         >
           {infiniteProjects.map((project, index) => (
             <SwiperSlide
               key={index}
-              className="!w-[240px] xs:!w-[280px] sm:!w-[320px] md:!w-[380px] lg:!w-[450px] xl:!w-[480px]"
+              className="!w-[280px] xs:!w-[320px] sm:!w-[400px] md:!w-[500px] lg:!w-[600px] xl:!w-[700px]"
             >
               <div className="project-3d">
-                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-black/30 group cursor-pointer">
-                  <Image
+                <div className="relative aspect-[16/9] overflow-hidden rounded-2xl group cursor-pointer">
+                  <img
                     src={project.src}
                     alt={project.alt}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 640px) 280px, (max-width: 768px) 320px, (max-width: 1024px) 400px, 480px"
-                    quality={100}
-                    priority={index < 4}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     style={{
-                      imageRendering: 'auto',
-                      WebkitBackfaceVisibility: 'hidden',
-                      backfaceVisibility: 'hidden',
-                      transform: 'translateZ(0)'
+                      filter: 'none',
+                      opacity: 1
                     }}
                   />
                 </div>
