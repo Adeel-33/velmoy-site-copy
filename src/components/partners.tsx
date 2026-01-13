@@ -19,7 +19,7 @@ const Partner=()=>{
 
     useEffect(() => {
       const track = trackRef.current;
-
+      if (!track) return;
       const width = track.scrollWidth / 2;
 
       const tween=gsap.to(track, {
