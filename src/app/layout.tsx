@@ -2,6 +2,18 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import localFont from "next/font/local"
+
+export const Inter=localFont({
+    src:"../fonts/inter/static/inter_18pt-Regular.ttf",
+    variable:"--font-inter"
+
+})
+export const Satoshi=localFont({
+  src:"../fonts/satoshi/fonts/Satoshi-Regular.woff2",
+  variable: "--font-satoshi",
+})
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

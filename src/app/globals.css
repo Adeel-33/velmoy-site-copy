@@ -53,7 +53,7 @@ body {
   }
 
   .projects-swiper .swiper-slide-active {
-    transform: rotateY(0deg) scale(1.08) !important;
+    transform: rotateY(0deg) scale(1.1) !important;
     opacity: 1;
   }
 }
@@ -73,3 +73,5 @@ body {
   -webkit-backface-visibility: visible;
   backface-visibility: visible;
 }
+
+
