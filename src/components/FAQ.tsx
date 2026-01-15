@@ -67,7 +67,13 @@ const FAQ = () => {
           {/* vector image    */}
 
           <div className="absolute z-0 inset-0 overflow-hidden ">
-            <Image src={vector} alt="vector image" className="" />
+            <Image
+              src={vector}
+              alt="vector image"
+              fill
+              className="object-cover object-center"
+              priority
+            />
           </div>
 
           {/* heading and paragraph */}

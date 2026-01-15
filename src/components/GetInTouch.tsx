@@ -26,29 +26,29 @@ const GetInTouch = () => {
   const textRef = useRef<HTMLDivElement | null>(null);
   const [phone, setPhone] = useState("");
 
-  // useEffect(() => {
-  //   if (!textRef.current || !sectionRef.current) return;
-  //   const animation = gsap.set(textRef.current, { scale: 1, rotate: 0 });
-  //   gsap.to(textRef.current, {
-  //     scale: 2.8,
+  useEffect(() => {
+    if (!textRef.current || !sectionRef.current) return;
+    const animation = gsap.set(textRef.current, { scale: 1, rotate: 0 });
+    gsap.to(textRef.current, {
+      scale: 2.5,
 
-  //     rotate: -35,
-  //     scrollTrigger: {
-  //       trigger: sectionRef.current,
-  //       start: "top center",
-  //       end: "+=500",
-  //       scrub: 1,
-  //       pin: true,
-  //     },
-  //   });
+      rotate: -35,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "center center",
+        end: "bottom center",
+        scrub: 2,
+        pin: true,
+      },
+    });
 
-  //   return () => {
-  //     animation.kill();
-  //     if (animation.scrollTrigger) {
-  //       animation.scrollTrigger.kill(); // kills the scroll trigger
-  //     }
-  //   };
-  // }, []);
+    return () => {
+      animation.kill();
+      if (animation.scrollTrigger) {
+        animation.scrollTrigger.kill(); // kills the scroll trigger
+      }
+    };
+  }, []);
 
   const contactOptions = [
     {
@@ -77,7 +77,7 @@ const GetInTouch = () => {
         {/* Animated text */}
         <div
           ref={sectionRef}
-          className="bg-[#1F1F25] max-w-[1449px] h-full min-h-[540px] sm:min-h-[740px] flex items-center    justify-center "
+          className="bg-[#1F1F25] max-w-[1449px] h-full min-h-[540px] sm:min-h-[740px] flex items-center    justify-center overflow-hidden "
         >
           <h1
             ref={textRef}
