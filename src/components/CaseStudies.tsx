@@ -382,14 +382,14 @@ const CaseStudies = () => {
                   </div>
                   {/* floating cards */}
                   {/* Card 1 Front */}
-                  <div className="absolute z-40 top-4 -left-6 w-[148px] h-[64px] md:top-20 md:-left-40 md:w-[204px] md:h-[87px] bg-white rounded-[12px] flex flex-col justify-center px-8 shadow-xl">
+                  <div className="absolute z-40 top-4 -left-6 w-[148px] h-[72px] md:top-20 md:-left-40 md:w-[204px] md:h-[87px] bg-white rounded-[12px] flex flex-col justify-center px-8 shadow-xl">
                     <h1
-                      className={`${Satoshi.className} font-bold text-[16px] text-[#000D0D]`}
+                      className={`${Satoshi.className} font-bold text-[12px] md:text-[16px] text-[#000D0D]`}
                     >
                       Maurice Impriam
                     </h1>
                     <p
-                      className={`${Inter.className} font-normal text-[12px] text-[#4E4E4E]`}
+                      className={`${Inter.className} font-normal text-[10px] md:text-[12px] text-[#4E4E4E]`}
                     >
                       Beeindruckender CEO
                     </p>
